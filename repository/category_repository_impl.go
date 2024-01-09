@@ -4,8 +4,9 @@ import (
 	"context"
 	"database/sql"
 	"errors"
-	"programmerzamannow/belajar-golang-restful-api/helper"
-	"programmerzamannow/belajar-golang-restful-api/model/domain"
+
+	"github.com/ckn01/belajar-golang-restful-api/helper"
+	"github.com/ckn01/belajar-golang-restful-api/model/domain"
 )
 
 type CategoryRepositoryImpl struct {
