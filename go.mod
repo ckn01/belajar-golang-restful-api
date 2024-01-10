@@ -3,7 +3,8 @@ module github.com/ckn01/belajar-golang-restful-api
 go 1.21.4
 
 require (
-	github.com/go-playground/validator/v10 v10.16.0
+	// github.com/go-playground/validator/v10 v10.16.0
+	github.com/go-playground/validator/v10 v10.9.0
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/stretchr/testify v1.8.2

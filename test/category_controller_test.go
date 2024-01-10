@@ -13,7 +13,6 @@ import (
 	"testing"
 	"time"
 
-	//github.com/ckn01/belajar-golang-restful-api
 	"github.com/ckn01/belajar-golang-restful-api/app"
 	"github.com/ckn01/belajar-golang-restful-api/controller"
 	"github.com/ckn01/belajar-golang-restful-api/helper"
