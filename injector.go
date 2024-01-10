@@ -26,10 +26,15 @@ var categorySet = wire.NewSet(
 	wire.Bind(new(controller.CategoryController), new(*controller.CategoryControllerImpl)),
 )
 
+func provideValidatorOptions() []validator.Option {
+	return []validator.Option{validator.WithRequiredStructEnabled()}
+}
+
 func InitializedServer() *http.Server {
 	wire.Build(
 		app.NewDB,
 		validator.New,
+		provideValidatorOptions,
 		categorySet,
 		app.NewRouter,
 		wire.Bind(new(http.Handler), new(*httprouter.Router)),

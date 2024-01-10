@@ -26,7 +26,8 @@ import (
 func InitializedServer() *http.Server {
 	categoryRepositoryImpl := repository.NewCategoryRepository()
 	db := app.NewDB()
-	validate := validator.New()
+	v := provideValidatorOptions()
+	validate := validator.New(v...)
 	categoryServiceImpl := service.NewCategoryService(categoryRepositoryImpl, db, validate)
 	categoryControllerImpl := controller.NewCategoryController(categoryServiceImpl)
 	router := app.NewRouter(categoryControllerImpl)
@@ -38,3 +39,7 @@ func InitializedServer() *http.Server {
 // injector.go:
 
 var categorySet = wire.NewSet(repository.NewCategoryRepository, wire.Bind(new(repository.CategoryRepository), new(*repository.CategoryRepositoryImpl)), service.NewCategoryService, wire.Bind(new(service.CategoryService), new(*service.CategoryServiceImpl)), controller.NewCategoryController, wire.Bind(new(controller.CategoryController), new(*controller.CategoryControllerImpl)))
+
+func provideValidatorOptions() []validator.Option {
+	return []validator.Option{validator.WithRequiredStructEnabled()}
+}
