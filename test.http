@@ -10,16 +10,16 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name" : "Food"
+  "name" : "Makanan"
 }
 
 ### Get category by Id
-GET http://localhost:3000/api/categories/2
+GET http://localhost:3000/api/categories/3
 X-API-Key: RAHASIA
 Accept: application/json
 
 ### Update category by id
-PUT http://localhost:3000/api/categories/2
+PUT http://localhost:3000/api/categories/3
 X-API-Key: RAHASIA
 Accept: application/json
 Content-Type: application/json
